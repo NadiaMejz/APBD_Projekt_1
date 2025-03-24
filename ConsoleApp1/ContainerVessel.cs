@@ -47,6 +47,11 @@ public class ContainerVessel
     public void TransferContainerBetweenShips(ContainerVessel targetShip, string containerName)
     {
         Container container = containersOnBoard.Find(c => c.containerName == containerName);
+        if (container == null)
+        {
+            Console.WriteLine("Cannot find container " + containerName);
+            return;
+        }
         RemoveContainerFromShip(containerName);
         targetShip.LoadContainerOntoShip(container);
     }
