@@ -20,9 +20,9 @@ public class Load
 
     public void AddProductToCargo(Product product, double weightOfAddedProducts)
     {
-        if (this.cargoCategory == this.cargoCategory)
+        if (this.cargoCategory == product.ProductCategory)
         {
-            char category = this.cargoCategory;
+            var category = this.cargoCategory;
             switch (category)
             {
                 case 'L':

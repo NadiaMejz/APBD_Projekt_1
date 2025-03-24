@@ -23,7 +23,7 @@ class L : Container, IHazardNotifier
                 //PODODAWAJ TUTAJ OSTRZEZENIA
                 if (load.isCargoDangerous == true)
                 {
-                    this.loadWeightAvailable = loadWeightAvailable* 0.5;
+                    this.loadWeightAvailable = loadWeightAvailable * 0.5;
                 }
                 else
                 {
@@ -71,7 +71,7 @@ class L : Container, IHazardNotifier
                 }
                 else //jezeli mamy poprzedni i nie jest niebezpieczny ale ten obecny jest
                 {
-                    double maxWeightForDangerous = maxLoadWeight * 0.5;
+                    var maxWeightForDangerous = maxLoadWeight * 0.5;
                     if (this.loadWeightAvailable + load.loadWeight <= maxWeightForDangerous)
                     {
                         load.containerName = this.containerName;

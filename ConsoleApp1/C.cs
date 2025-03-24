@@ -29,7 +29,7 @@ class C : Container
             if (load.cargoCategory.ToString() == this.GetType().Name && //PODODAWAJ TUTAJ OSTRZEZENIA
                 this.IsTemperatureCompatible(this.maintainedTemperature, load))
             {
-                if (this.maxLoadWeight <= load.loadWeight)
+                if (this.loadWeightAvailable <= load.loadWeight)
                 {
                     load.containerName = this.containerName;
                     this.loadWeightAvailable -= load.loadWeight;
@@ -74,7 +74,7 @@ class C : Container
     public void unloadContainer(Load load)
     {
         loadsAdded.Remove(load);
-        this.loadWeightAvailable -= load.loadWeight;
+        this.loadWeightAvailable += load.loadWeight;
     }
 
     public void unloadAllLoads()
